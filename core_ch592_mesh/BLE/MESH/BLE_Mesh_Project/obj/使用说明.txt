@@ -1,0 +1,10 @@
+编译后脚本会自动合并成CH592_Mesh_All_In_One.hex  烧录该文件即可
+
+如果电脑没有合并的环境可能无法自动合并
+
+需要同时下载bootloader.hex BLE_Mesh_App.hex
+
+https://www.wch.cn/downloads/WCH_Mesh_Android_ZIP.html
+官方mesh测试工具
+
+通常改成私有 不支持官方mesh工具 因为官方的广播会包含沁恒ID
