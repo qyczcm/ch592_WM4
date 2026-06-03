@@ -108,9 +108,9 @@ static struct bt_mesh_cfg_srv cfg_srv = {
     /* Ĭ��TTLΪ3 */
     .default_ttl = 3,
     /* �ײ㷢����������7�Σ�ÿ�μ��10ms�������ڲ�������� */
-    .net_transmit = BLE_MESH_TRANSMIT(3, 10),   //原本为(7, 10)
+    .net_transmit = BLE_MESH_TRANSMIT(6, 10),   //原本为(7, 10)
     /* �ײ�ת����������7�Σ�ÿ�μ��10ms�������ڲ�������� */
-    .relay_retransmit = BLE_MESH_TRANSMIT(2, 10),//原本为(7, 10)
+    .relay_retransmit = BLE_MESH_TRANSMIT(6, 10),//原本为(7, 10)
     .handler = cfg_srv_rsp_handler,
 };
 
@@ -538,7 +538,7 @@ static int vendor_model_srv_send(uint16_t addr, uint8_t *pData, uint16_t len)
     struct send_param param = {
         .app_idx = vnd_models[0].keys[0], // ����Ϣʹ�õ�app key�������ض���ʹ�õ�0��key
         .addr = addr,          // ����Ϣ������Ŀ�ĵص�ַ������Ϊ�������ĵ�ַ�������Լ�
-        .trans_cnt = 0x02,                // ����Ϣ���û��㷢�ʹ���  原本为 0x05
+        .trans_cnt = 0x05,                // ����Ϣ���û��㷢�ʹ���  原本为 0x05
         .period = K_MSEC(400),            // ����Ϣ�ش��ļ�������鲻С��(200+50*TTL)ms�������ݽϴ�����ӳ�   500
         .rand = (0),                      // ����Ϣ���͵�����ӳ�
         .tid = vendor_srv_tid_get(),      // tid��ÿ��������Ϣ����ѭ����srvʹ��128~191

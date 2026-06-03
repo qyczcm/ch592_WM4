@@ -61,7 +61,7 @@ post-build:
 
 # Tool invocations
 BLE_Mesh_App.elf: $(OBJS) $(USER_OBJS_ESCAPE)
-	@	riscv-none-embed-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -msmall-data-limit=8 -mno-save-restore -fmax-errors=20 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common -g -T "e:\wavemail\防跌\V1有人无人传感器\core_ch592_mesh\BLE\MESH\BLE_Mesh_Project\Ld\Link.ld" -nostartfiles -Xlinker --gc-sections -L"e:\wavemail\防跌\V1有人无人传感器\core_ch592_mesh\BLE\MESH\BLE_Mesh_Project" -L"e:\wavemail\防跌\V1有人无人传感器\core_ch592_mesh\BLE\MESH\MESH_LIB" -L"e:\wavemail\防跌\V1有人无人传感器\core_ch592_mesh\BLE\LIB" -L"e:\wavemail\防跌\V1有人无人传感器\core_ch592_mesh\SRC\StdPeriphDriver" -Xlinker --print-memory-usage -Wl,-Map,"BLE_Mesh_App.map" --specs=nano.specs --specs=nosys.specs -o "BLE_Mesh_App.elf" $(OBJS) $(LIBS)
+	@	riscv-none-embed-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -msmall-data-limit=8 -mno-save-restore -fmax-errors=20 -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common -g -T "e:\wavemail\防跌\V1有人无人传感器1\core_ch592_mesh\BLE\MESH\BLE_Mesh_Project\Ld\Link.ld" -nostartfiles -Xlinker --gc-sections -L"e:\wavemail\防跌\V1有人无人传感器1\core_ch592_mesh\BLE\MESH\BLE_Mesh_Project" -L"e:\wavemail\防跌\V1有人无人传感器1\core_ch592_mesh\BLE\MESH\MESH_LIB" -L"e:\wavemail\防跌\V1有人无人传感器1\core_ch592_mesh\BLE\LIB" -L"e:\wavemail\防跌\V1有人无人传感器1\core_ch592_mesh\SRC\StdPeriphDriver" -Xlinker --print-memory-usage -Wl,-Map,"BLE_Mesh_App.map" --specs=nano.specs --specs=nosys.specs -o "BLE_Mesh_App.elf" $(OBJS) $(LIBS)
 BLE_Mesh_App.hex: BLE_Mesh_App.elf
 	@	riscv-none-embed-objcopy -O ihex "BLE_Mesh_App.elf" "BLE_Mesh_App.hex"
 BLE_Mesh_App.lst: BLE_Mesh_App.elf
